@@ -1,0 +1,13 @@
+{
+  "name": "eshopping",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "cypress": "^12.16.0"
+    },
+  "dependencies": {
+  }
+}
