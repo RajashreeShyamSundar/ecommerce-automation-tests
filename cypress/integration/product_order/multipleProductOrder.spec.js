@@ -17,7 +17,7 @@ describe('Multiple Product Order Purchase', function () {
         cy.get('.btn.check_out').contains('Proceed To Checkout').click()
         cy.get('.btn.check_out').contains('Place Order').click()
   
-        // Complete payment using custom command
+        // Complete the payment using a custom command and assert that the "Order Placed!" message is displayed
         cy.completeCardPayment("pinky", "1234 4321 6666 4444", "111", "06", "2006");
       })
     })

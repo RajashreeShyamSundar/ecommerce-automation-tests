@@ -9,7 +9,7 @@
 // ***********************************************
 //
 //
-// -- This is a parent command --
+// This is a parent command for logging in a user 
 Cypress.Commands.add('login', (email, password) => {
     cy.visit(Cypress.env('url'));
     cy.get('a[href="/login"]').contains('Signup / Login').click();
@@ -18,6 +18,7 @@ Cypress.Commands.add('login', (email, password) => {
     cy.get('[data-qa="login-button"]').click();
   });
  
+// This command completes the card payment process and checks for success 
 Cypress.Commands.add('completeCardPayment', (name, cardNumber, cvc, expiryMonth, expiryYear) => {
     cy.get('[data-qa="name-on-card"]').type(name);
     cy.get('[data-qa="card-number"]').type(cardNumber);
@@ -28,7 +29,7 @@ Cypress.Commands.add('completeCardPayment', (name, cardNumber, cvc, expiryMonth,
     cy.get('[data-qa="order-placed"] > b').should('be.visible').and('contain.text', 'Order Placed!');
     cy.get('[data-qa="continue-button"]').click();
   });  
-
+// This command adds a product to the cart by searching for it 
   Cypress.Commands.add('addToCart', (productName) => {
     cy.get('a[href="/products"]').click()
                   cy.get('#search_product').type(productName)
