@@ -1,6 +1,7 @@
 describe('Signup new user', function () {
+  
+  it('should signup a new user', function () {
 
-  beforeEach(function () {
     cy.visit(Cypress.env('url'));
     cy.get('a[href="/login"]').contains('Signup / Login').click()
     cy.fixture('loginData').then((data) => {
@@ -11,9 +12,7 @@ describe('Signup new user', function () {
       cy.get('[data-qa="signup-button"]').click()
       cy.wait(1000)
       cy.url().should('include', '/signup');
-    });
 
-    it('should signup a new user', function () {
       // Fill in signup form with valid input
 
       const email = data.email;
@@ -39,9 +38,4 @@ describe('Signup new user', function () {
       cy.get('b').should('contain.text', 'Account Created!');   //Assertion to check if the account was created successfully
     })
   })
-  it('should signup a new user', function () {
-      cy.get('[data-qa="create-account"]').click()
-    //cy.get('[data-qa="error-message"]')  .should('contain.text', 'please fill out this field').and('be.visible');
-  })
-
 })
