@@ -36,6 +36,7 @@ Cypress.Commands.add('completeCardPayment', (name, cardNumber, cvc, expiryMonth,
                   cy.get('#submit_search')
                         .scrollIntoView()
                         .click();
+                  cy.screenshot('order-placed-successfully')
                   cy.get('.productinfo > .btn').click(); // Add to card
                   
   });

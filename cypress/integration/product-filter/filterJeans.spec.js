@@ -25,9 +25,11 @@ describe('Eshopping', function () {
         cy.get('.features_items').should('be.visible');
 
         // Assertion: Confirm exactly 3 products are displayed
-        cy.get('.features_items .single-products').should('have.length', 3);
+        cy.get('.features_items .single-products').should('have.length', 3)
+        cy.screenshot('three-products-displayed')
         cy.get('.features_items .single-products').each(($el) => {
             cy.wrap($el).should('contain.text', 'Jeans');
+
         })
     })
 })

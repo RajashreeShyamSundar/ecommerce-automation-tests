@@ -36,6 +36,7 @@ describe('Signup new user', function () {
       cy.get('[data-qa="mobile_number"]').type("98765432")
       cy.get('[data-qa="create-account"]').click()
       cy.get('b').should('contain.text', 'Account Created!');   //Assertion to check if the account was created successfully
+      cy.screenshot('account-created-successfully')
     })
   })
 })

@@ -34,7 +34,8 @@ describe('Write a Review for a Product', function () {
             cy.get('#button-review').click()
 
             // Assertion to check if the success notification appears after submitting the review
-            cy.contains('Thank you for your review.').should('be.visible'); 
+            cy.contains('Thank you for your review.').should('be.visible')
+            cy.screenshot('review-submission-success')
 
         })
     })
